@@ -1,0 +1,60 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+.general-info-preview {
+  color: rgb(83, 83, 83);
+  display: grid;
+  width: 80vw;
+  max-width: 1000px;
+  margin-left: 50px;
+}
+
+.resume-preview {
+  display: flex;
+  background-color: rgba(209, 202, 202, 0.507);
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
+}
+.resume-preview__title {
+  color: rgb(83, 83, 83);
+  font-size: 2rem;
+  border-bottom: 1px solid grey;
+  margin: 10px;
+}
+.resume-preview__name-title {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  align-items: start;
+  padding-right: 2rem;
+}
+.user-name-preview {
+  color: rgb(83, 83, 83);
+  font-size: 3rem;
+  margin-bottom: 0.25rem;
+}
+.user-job-title-preview {
+  color: rgba(114, 114, 114, 0.781);
+  font-size: 1rem;
+}
+
+.resume-preview__contact-info {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+
+.resume-preview__email,
+.resume-preview__phone,
+.resume-preview__address {
+  display: flex;
+  margin-bottom: 10px;
+}
+.mail-icon,
+.phone-icon,
+.address-icon {
+  margin-right: 5px;
+}
