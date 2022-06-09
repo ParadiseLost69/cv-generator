@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import GeneralInfo from "./GeneralInfo.js";
+import Education from "./Education.js";
 import "./Form.css";
 import GIPreview from "./Preview/GIPreview.js";
+import EducationPreview from "./Preview/EducationPreview";
 
 export default function Form(props) {
   const [userName, setUserName] = useState("");
@@ -9,6 +11,14 @@ export default function Form(props) {
   const [userPhone, setUserPhone] = useState("");
   const [userAddress, setUserAddress] = useState("");
   const [jobTitle, setJobTitle] = useState("");
+
+  //Education States//
+
+  const [userSchool, setUserSchool] = useState("");
+  const [userSubject, setUserSubject] = useState("");
+  const [userStartDate, setUserStartDate] = useState("");
+  const [userEndDate, setUserEndDate] = useState("");
+
   function submitHandler(e) {
     e.preventDefault();
     console.log({
@@ -32,6 +42,16 @@ export default function Form(props) {
           jobTitle={jobTitle}
           setJobTitle={setJobTitle}
         />
+        <Education
+          userSchool={userSchool}
+          setUserSchool={setUserSchool}
+          userSubject={userSubject}
+          setUserSubject={setUserSubject}
+          userStartDate={userStartDate}
+          setUserStartDate={setUserStartDate}
+          userEndDate={userEndDate}
+          setUserEndDate={setUserEndDate}
+        />
         <button type="submit" className="submit-button">
           Submit
         </button>
@@ -48,6 +68,16 @@ export default function Form(props) {
         setUserAddress={setUserAddress}
         jobTitle={jobTitle}
         setJobTitle={setJobTitle}
+      />
+      <EducationPreview
+        userSchool={userSchool}
+        setUserSchool={setUserSchool}
+        userSubject={userSubject}
+        setUserSubject={setUserSubject}
+        userStartDate={userStartDate}
+        setUserStartDate={setUserStartDate}
+        userEndDate={userEndDate}
+        setUserEndDate={setUserEndDate}
       />
     </div>
   );

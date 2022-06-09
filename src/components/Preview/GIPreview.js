@@ -17,11 +17,11 @@ export default function GIPreview(props) {
           </div>
           <div className="resume-preview__phone">
             <AiFillPhone className="phone-icon" />
-            <h3>Phone number: {props.userPhone}</h3>
+            <h3>{props.userPhone}</h3>
           </div>
           <div className="resume-preview__address">
             <AiFillHome className="address-icon" />
-            <h3>Address: {props.userAddress}</h3>
+            <h3>{props.userAddress}</h3>
           </div>
         </div>
       </div>
