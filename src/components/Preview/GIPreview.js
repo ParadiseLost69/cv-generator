@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./GIPreview.css";
 import { AiFillMail, AiFillPhone, AiFillHome } from "react-icons/ai";
 export default function GIPreview(props) {

@@ -6,11 +6,13 @@ import GIPreview from "./Preview/GIPreview.js";
 import EducationPreview from "./Preview/EducationPreview";
 
 export default function Form(props) {
+  const [preview, setPreview] = useState(true);
   const [userName, setUserName] = useState("");
   const [userEmail, setUserEmail] = useState("");
   const [userPhone, setUserPhone] = useState("");
   const [userAddress, setUserAddress] = useState("");
   const [jobTitle, setJobTitle] = useState("");
+  const [userMajor, setUserMajor] = useState("");
 
   //Education States//
 
@@ -18,6 +20,10 @@ export default function Form(props) {
   const [userSubject, setUserSubject] = useState("");
   const [userStartDate, setUserStartDate] = useState("");
   const [userEndDate, setUserEndDate] = useState("");
+
+  function previewHandler() {
+    setPreview((prevPreview) => !prevPreview);
+  }
 
   function submitHandler(e) {
     e.preventDefault();
@@ -28,9 +34,43 @@ export default function Form(props) {
     });
   }
   return (
-    <div>
+    <div className="container">
+      <button type="submit" className="submit-button" onClick={previewHandler}>
+        {preview ? "Show Preview" : "Edit information"}
+      </button>
       <form onSubmit={submitHandler}>
-        <GeneralInfo
+        {preview && (
+          <GeneralInfo
+            userName={userName}
+            setUserName={setUserName}
+            userEmail={userEmail}
+            setUserEmail={setUserEmail}
+            userPhone={userPhone}
+            setUserPhone={setUserPhone}
+            userAddress={userAddress}
+            setUserAddress={setUserAddress}
+            jobTitle={jobTitle}
+            setJobTitle={setJobTitle}
+          />
+        )}
+        {preview && (
+          <Education
+            userSchool={userSchool}
+            setUserSchool={setUserSchool}
+            userSubject={userSubject}
+            setUserSubject={setUserSubject}
+            userStartDate={userStartDate}
+            setUserStartDate={setUserStartDate}
+            userEndDate={userEndDate}
+            setUserEndDate={setUserEndDate}
+            userMajor={userMajor}
+            setUserMajor={setUserMajor}
+          />
+        )}
+      </form>
+
+      {!preview && (
+        <GIPreview
           userName={userName}
           setUserName={setUserName}
           userEmail={userEmail}
@@ -42,7 +82,9 @@ export default function Form(props) {
           jobTitle={jobTitle}
           setJobTitle={setJobTitle}
         />
-        <Education
+      )}
+      {!preview && (
+        <EducationPreview
           userSchool={userSchool}
           setUserSchool={setUserSchool}
           userSubject={userSubject}
@@ -51,34 +93,10 @@ export default function Form(props) {
           setUserStartDate={setUserStartDate}
           userEndDate={userEndDate}
           setUserEndDate={setUserEndDate}
+          userMajor={userMajor}
+          setUserMajor={setUserMajor}
         />
-        <button type="submit" className="submit-button">
-          Submit
-        </button>
-      </form>
-
-      <GIPreview
-        userName={userName}
-        setUserName={setUserName}
-        userEmail={userEmail}
-        setUserEmail={setUserEmail}
-        userPhone={userPhone}
-        setUserPhone={setUserPhone}
-        userAddress={userAddress}
-        setUserAddress={setUserAddress}
-        jobTitle={jobTitle}
-        setJobTitle={setJobTitle}
-      />
-      <EducationPreview
-        userSchool={userSchool}
-        setUserSchool={setUserSchool}
-        userSubject={userSubject}
-        setUserSubject={setUserSubject}
-        userStartDate={userStartDate}
-        setUserStartDate={setUserStartDate}
-        userEndDate={userEndDate}
-        setUserEndDate={setUserEndDate}
-      />
+      )}
     </div>
   );
 }

@@ -1,3 +1,21 @@
 .education-input {
   margin: 20px;
+  display: grid;
+  grid-template-columns: 350px 350px;
+  grid-template-rows: 0.5fr 1fr;
+}
+.start-finish-inputs {
+  display: flex;
+  flex-flow: column;
+  width: 300px;
+}
+.school-name-input {
+  display: flex;
+  flex-flow: column;
+}
+.school-input,
+.major-input {
+  width: 300px;
+}
+.education-container {
 }

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./GeneralInfo.css";
 export default function GeneralInfo(props) {
   function nameChangeHandler(e) {
@@ -54,7 +54,7 @@ export default function GeneralInfo(props) {
         ></input>
         <input
           type="text"
-          className="userJobTitleInput"
+          className="user-job-title-input"
           onChange={jobTitleChangeHandler}
           value={props.jobTitle}
           placeholder="Job Title"

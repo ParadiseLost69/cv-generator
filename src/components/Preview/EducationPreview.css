@@ -1,0 +1,26 @@
+.education-preview {
+  color: rgb(83, 83, 83);
+  display: flex;
+  flex-flow: column;
+  width: 80vw;
+  max-width: 1000px;
+}
+.education-preview-title {
+  display: flex;
+  justify-content: end;
+}
+.education-content-preview,
+.education-preview-title {
+  display: flex;
+  flex-flow: wrap column;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.education-content-preview h2,
+.education-content-preview h3,
+.education-content-preview p {
+  margin-bottom: 4px;
+}

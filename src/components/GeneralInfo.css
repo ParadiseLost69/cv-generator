@@ -1,7 +1,20 @@
 .general-info-section {
-  margin: 10px;
-  border: 1px solid black;
+  margin-top: 10px;
+  /* border-bottom: 1px solid black; */
 }
 .general-info-section input {
   margin: 10px;
+}
+.general-info-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.user-job-title-input {
+  grid-column: 1;
+  grid-row: 2;
+}
+.address {
+  grid-column: 2;
 }
